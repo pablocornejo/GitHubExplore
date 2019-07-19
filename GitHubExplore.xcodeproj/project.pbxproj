@@ -16,6 +16,7 @@
 		CFEB474B22E1438800C33D45 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474922E1423500C33D45 /* UserCell.swift */; };
 		CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474722E1422000C33D45 /* GitHubUser.swift */; };
 		CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */; };
+		CFEB474F22E14ACA00C33D45 /* AvatarDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CFEB474722E1422000C33D45 /* GitHubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
 		CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEndpoint.swift; sourceTree = "<group>"; };
 		CFEB474922E1423500C33D45 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDownloadOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */,
 				CFEB474722E1422000C33D45 /* GitHubUser.swift */,
+				CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				CFEB474A22E1438400C33D45 /* UsersViewController.swift in Sources */,
 				CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */,
 				CFEB473222E0B07400C33D45 /* AppDelegate.swift in Sources */,
+				CFEB474F22E14ACA00C33D45 /* AvatarDownloadOperation.swift in Sources */,
 				CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

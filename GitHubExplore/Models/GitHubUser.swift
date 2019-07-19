@@ -16,7 +16,7 @@ struct UsersSearchResult: Decodable {
     }
 }
 
-struct GitHubUser: Decodable {
+class GitHubUser: Decodable {
     let avatarUrl: URL
     let username: String
     let url: URL

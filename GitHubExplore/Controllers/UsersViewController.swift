@@ -38,6 +38,9 @@ class UsersViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: UserCell.self), for: indexPath) as! UserCell
         let user = users[indexPath.item]
         cell.configure(with: user, profileButtonTapHandler: showUserProfile(at:))
+        if user.avatarImage == nil {
+            startAvatarDownload(for: user, at: indexPath)
+        }
         cell.backgroundColor = .groupTableViewBackground
         return cell
     }
@@ -61,6 +64,18 @@ class UsersViewController: UICollectionViewController {
         } else {
             present(safariVC, animated: true)
         }
+    }
+    
+    private func startAvatarDownload(for user: GitHubUser, at indexPath: IndexPath) {
+        let operation = AvatarDownloadOperation(for: user)
+        operation.completionBlock = {
+            AvatarDownloadOperation.downloadsInProgress[indexPath] = nil
+            if operation.isCancelled { return }
+            DispatchQueue.main.async {
+                self.collectionView.reloadItems(at: [indexPath])
+            }
+        }
+        AvatarDownloadOperation.downloadQueue.addOperation(operation)
     }
 }
 
