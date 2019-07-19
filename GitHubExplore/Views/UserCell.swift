@@ -8,23 +8,35 @@
 
 import UIKit
 
+protocol UserCellDelegate: class {
+    func didTapViewProfileButton(for user: GitHubUser)
+    func didTapRepositoriesButton(for user: GitHubUser)
+}
+
 class UserCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var repositoriesButton: UIButton!
     
-    private var profileUrl: URL?
-    private var profileButtonTapHandler: ((URL) -> Void)?
+    private weak var user: GitHubUser?
+    weak var delegate: UserCellDelegate?
     
     @IBAction func didTapProfileButton() {
-        guard let profileUrl = profileUrl else { return }
-        profileButtonTapHandler?(profileUrl)
+        guard let user = user else { return }
+        delegate?.didTapViewProfileButton(for: user)
     }
     
-    func configure(with user: GitHubUser, profileButtonTapHandler: ((URL) -> Void)?) {
+    @IBAction func didTapRepositoriesButton() {
+        guard let user = user else { return }
+        delegate?.didTapRepositoriesButton(for: user)
+    }
+    
+    func configure(with user: GitHubUser, delegate: UserCellDelegate) {
         imageView.image = user.avatarImage
         usernameLabel.text = user.username
-        profileUrl = user.htmlUrl
-        self.profileButtonTapHandler = profileButtonTapHandler
+        repositoriesButton.isHidden = user.repositories == nil
+        self.user = user
+        self.delegate = delegate
     }
 }

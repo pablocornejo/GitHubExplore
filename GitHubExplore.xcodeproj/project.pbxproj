@@ -19,6 +19,9 @@
 		CFEB474F22E14ACA00C33D45 /* AvatarDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */; };
 		CFEB475122E1525800C33D45 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475022E1525800C33D45 /* Repository.swift */; };
 		CFEB475322E1538F00C33D45 /* RepositoriesFetchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475222E1538F00C33D45 /* RepositoriesFetchOperation.swift */; };
+		CFEB475722E15D6E00C33D45 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475522E15D6E00C33D45 /* Identifiers.swift */; };
+		CFEB475B22E1E18F00C33D45 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475A22E1E18F00C33D45 /* RepositoriesViewController.swift */; };
+		CFEB475D22E1E1BE00C33D45 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475C22E1E1BE00C33D45 /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDownloadOperation.swift; sourceTree = "<group>"; };
 		CFEB475022E1525800C33D45 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		CFEB475222E1538F00C33D45 /* RepositoriesFetchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesFetchOperation.swift; sourceTree = "<group>"; };
+		CFEB475622E15D6E00C33D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = GitHubExplore/Base.lproj/Identifiers.swift; sourceTree = SOURCE_ROOT; };
+		CFEB475A22E1E18F00C33D45 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
+		CFEB475C22E1E1BE00C33D45 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 				CFEB474322E1405800C33D45 /* Models */,
 				CFEB474422E1406A00C33D45 /* Views */,
 				CFEB474522E1408B00C33D45 /* Controllers */,
+				CFEB475422E15D4B00C33D45 /* Helpers */,
 				CFEB473322E0B07400C33D45 /* ViewController.swift */,
 				CFEB473822E0B07600C33D45 /* Assets.xcassets */,
 				CFEB473A22E0B07600C33D45 /* LaunchScreen.storyboard */,
@@ -97,6 +104,7 @@
 			children = (
 				CFEB473522E0B07400C33D45 /* Main.storyboard */,
 				CFEB474922E1423500C33D45 /* UserCell.swift */,
+				CFEB475C22E1E1BE00C33D45 /* RepositoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,8 +113,17 @@
 			isa = PBXGroup;
 			children = (
 				CFEB474622E1420900C33D45 /* UsersViewController.swift */,
+				CFEB475A22E1E18F00C33D45 /* RepositoriesViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFEB475422E15D4B00C33D45 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB475522E15D6E00C33D45 /* Identifiers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,14 +197,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEB475B22E1E18F00C33D45 /* RepositoriesViewController.swift in Sources */,
 				CFEB474B22E1438800C33D45 /* UserCell.swift in Sources */,
 				CFEB473422E0B07400C33D45 /* ViewController.swift in Sources */,
+				CFEB475D22E1E1BE00C33D45 /* RepositoryCell.swift in Sources */,
 				CFEB474A22E1438400C33D45 /* UsersViewController.swift in Sources */,
 				CFEB475122E1525800C33D45 /* Repository.swift in Sources */,
 				CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */,
 				CFEB473222E0B07400C33D45 /* AppDelegate.swift in Sources */,
 				CFEB475322E1538F00C33D45 /* RepositoriesFetchOperation.swift in Sources */,
 				CFEB474F22E14ACA00C33D45 /* AvatarDownloadOperation.swift in Sources */,
+				CFEB475722E15D6E00C33D45 /* Identifiers.swift in Sources */,
 				CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +229,14 @@
 				CFEB473B22E0B07600C33D45 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CFEB475522E15D6E00C33D45 /* Identifiers.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFEB475622E15D6E00C33D45 /* Base */,
+			);
+			name = Identifiers.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
