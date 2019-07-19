@@ -22,6 +22,11 @@ class AvatarDownloadOperation: Operation {
         self.user = user
     }
     
+    static func cancelAllOperations() {
+        downloadQueue.cancelAllOperations()
+        downloadsInProgress = [:]
+    }
+    
     override func main() {
         if isCancelled { return }
         

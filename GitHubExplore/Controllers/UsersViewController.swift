@@ -13,10 +13,10 @@ class UsersViewController: UICollectionViewController, UserCellDelegate {
     
     // MARK: - Private properties
     
-    private let itemsPerRow: CGFloat = 1
     private let itemSpacing: CGFloat = 20
     private lazy var sectionInsets = UIEdgeInsets(top: itemSpacing, left: itemSpacing, bottom: itemSpacing, right: itemSpacing)
     private var currentSearchTask: URLSessionDataTask?
+    private var currentSearchTerm = ""
     private var users: [GitHubUser] = [] {
         didSet { collectionView.reloadData() }
     }
@@ -124,9 +124,12 @@ class UsersViewController: UICollectionViewController, UserCellDelegate {
 
 extension UsersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
+        guard let text = searchController.searchBar.text, !text.isEmpty, text != currentSearchTerm else { return }
+        currentSearchTerm = text
         let userSearchEndpoint = GitHubEndpoint.userSearch(term: text)
         currentSearchTask?.cancel()
+        AvatarDownloadOperation.cancelAllOperations()
+        RepositoriesFetchOperation.cancelAllOperations()
         currentSearchTask = URLSession.shared.dataTask(with: userSearchEndpoint.urlRequest) { [weak self] data, response, error in
             if let error = error { print(error); return }
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data else { return }
@@ -148,9 +151,8 @@ extension UsersViewController: UISearchResultsUpdating {
 extension UsersViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let totalPaddingSpace: CGFloat = itemSpacing * (itemsPerRow - 1) + sectionInsets.left + sectionInsets.right
-        let availableWidth = view.frame.width - totalPaddingSpace
-        let itemWidth = availableWidth / itemsPerRow
+        let totalPaddingSpace = sectionInsets.left + sectionInsets.right
+        let itemWidth = view.frame.width - totalPaddingSpace
         let aspectRatio: CGFloat = 2/1
         let itemHeigth = itemWidth / aspectRatio
         return CGSize(width: itemWidth, height: itemHeigth)

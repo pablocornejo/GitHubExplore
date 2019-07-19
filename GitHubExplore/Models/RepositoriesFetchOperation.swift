@@ -22,6 +22,11 @@ class RepositoriesFetchOperation: Operation {
         self.user = user
     }
     
+    static func cancelAllOperations() {
+        fetchQueue.cancelAllOperations()
+        fetchesInProgress = [:]
+    }
+    
     override func main() {
         if isCancelled { return }
         
