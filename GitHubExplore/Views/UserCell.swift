@@ -24,7 +24,7 @@ class UserCell: UICollectionViewCell {
     func configure(with user: GitHubUser, profileButtonTapHandler: ((URL) -> Void)?) {
         imageView.image = user.avatarImage
         usernameLabel.text = user.username
-        profileUrl = user.url
+        profileUrl = user.htmlUrl
         self.profileButtonTapHandler = profileButtonTapHandler
     }
 }

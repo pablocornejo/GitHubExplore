@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class UsersViewController: UICollectionViewController {
     
@@ -54,7 +55,12 @@ class UsersViewController: UICollectionViewController {
     }
     
     private func showUserProfile(at url: URL) {
-        // TODO: Implementation missing
+        let safariVC = SFSafariViewController(url: url)
+        if let presentedVC = presentedViewController {
+            presentedVC.present(safariVC, animated: true)
+        } else {
+            present(safariVC, animated: true)
+        }
     }
 }
 
