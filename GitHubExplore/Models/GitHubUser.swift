@@ -23,6 +23,7 @@ class GitHubUser: Decodable {
     let htmlUrl: URL
     let reposUrl: URL
     var avatarImage: UIImage?
+    var repositories: [Repository]?
     
     enum CodingKeys: String, CodingKey {
         case avatarUrl

@@ -17,6 +17,8 @@
 		CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474722E1422000C33D45 /* GitHubUser.swift */; };
 		CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */; };
 		CFEB474F22E14ACA00C33D45 /* AvatarDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */; };
+		CFEB475122E1525800C33D45 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475022E1525800C33D45 /* Repository.swift */; };
+		CFEB475322E1538F00C33D45 /* RepositoriesFetchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB475222E1538F00C33D45 /* RepositoriesFetchOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEndpoint.swift; sourceTree = "<group>"; };
 		CFEB474922E1423500C33D45 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDownloadOperation.swift; sourceTree = "<group>"; };
+		CFEB475022E1525800C33D45 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		CFEB475222E1538F00C33D45 /* RepositoriesFetchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesFetchOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,9 @@
 			children = (
 				CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */,
 				CFEB474722E1422000C33D45 /* GitHubUser.swift */,
+				CFEB475022E1525800C33D45 /* Repository.swift */,
 				CFEB474E22E14ACA00C33D45 /* AvatarDownloadOperation.swift */,
+				CFEB475222E1538F00C33D45 /* RepositoriesFetchOperation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,8 +183,10 @@
 				CFEB474B22E1438800C33D45 /* UserCell.swift in Sources */,
 				CFEB473422E0B07400C33D45 /* ViewController.swift in Sources */,
 				CFEB474A22E1438400C33D45 /* UsersViewController.swift in Sources */,
+				CFEB475122E1525800C33D45 /* Repository.swift in Sources */,
 				CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */,
 				CFEB473222E0B07400C33D45 /* AppDelegate.swift in Sources */,
+				CFEB475322E1538F00C33D45 /* RepositoriesFetchOperation.swift in Sources */,
 				CFEB474F22E14ACA00C33D45 /* AvatarDownloadOperation.swift in Sources */,
 				CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */,
 			);

@@ -25,9 +25,13 @@ class AvatarDownloadOperation: Operation {
     override func main() {
         if isCancelled { return }
         
-        guard let imageData = try? Data(contentsOf: user.avatarUrl) else { return }
-        
-        if isCancelled { return }
+        var data: Data?
+        do {
+            data = try Data(contentsOf: user.avatarUrl)
+        } catch {
+            print(error)
+        }
+        guard let imageData = data, !isCancelled else { return }
         
         if !imageData.isEmpty {
             user.avatarImage = UIImage(data: imageData)

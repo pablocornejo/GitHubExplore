@@ -41,6 +41,9 @@ class UsersViewController: UICollectionViewController {
         if user.avatarImage == nil {
             startAvatarDownload(for: user, at: indexPath)
         }
+        if user.repositories == nil {
+            startRepositoriesDownload(for: user, at: indexPath)
+        }
         cell.backgroundColor = .groupTableViewBackground
         return cell
     }
@@ -67,6 +70,7 @@ class UsersViewController: UICollectionViewController {
     }
     
     private func startAvatarDownload(for user: GitHubUser, at indexPath: IndexPath) {
+        guard AvatarDownloadOperation.downloadsInProgress[indexPath] == nil else { return }
         let operation = AvatarDownloadOperation(for: user)
         operation.completionBlock = {
             AvatarDownloadOperation.downloadsInProgress[indexPath] = nil
@@ -76,6 +80,15 @@ class UsersViewController: UICollectionViewController {
             }
         }
         AvatarDownloadOperation.downloadQueue.addOperation(operation)
+    }
+    
+    private func startRepositoriesDownload(for user: GitHubUser, at indexPath: IndexPath) {
+        guard RepositoriesFetchOperation.fetchesInProgress[indexPath] == nil else { return }
+        let operation = RepositoriesFetchOperation(for: user)
+        operation.completionBlock = {
+            RepositoriesFetchOperation.fetchesInProgress[indexPath] = nil
+        }
+        RepositoriesFetchOperation.fetchQueue.addOperation(operation)
     }
 }
 
