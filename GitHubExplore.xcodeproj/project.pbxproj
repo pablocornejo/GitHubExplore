@@ -12,6 +12,10 @@
 		CFEB473722E0B07400C33D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFEB473522E0B07400C33D45 /* Main.storyboard */; };
 		CFEB473922E0B07600C33D45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFEB473822E0B07600C33D45 /* Assets.xcassets */; };
 		CFEB473C22E0B07600C33D45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFEB473A22E0B07600C33D45 /* LaunchScreen.storyboard */; };
+		CFEB474A22E1438400C33D45 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474622E1420900C33D45 /* UsersViewController.swift */; };
+		CFEB474B22E1438800C33D45 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474922E1423500C33D45 /* UserCell.swift */; };
+		CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474722E1422000C33D45 /* GitHubUser.swift */; };
+		CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		CFEB473822E0B07600C33D45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFEB473B22E0B07600C33D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFEB473D22E0B07600C33D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFEB474622E1420900C33D45 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		CFEB474722E1422000C33D45 /* GitHubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
+		CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEndpoint.swift; sourceTree = "<group>"; };
+		CFEB474922E1423500C33D45 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				CFEB473122E0B07400C33D45 /* AppDelegate.swift */,
+				CFEB474322E1405800C33D45 /* Models */,
+				CFEB474422E1406A00C33D45 /* Views */,
+				CFEB474522E1408B00C33D45 /* Controllers */,
 				CFEB473322E0B07400C33D45 /* ViewController.swift */,
-				CFEB473522E0B07400C33D45 /* Main.storyboard */,
 				CFEB473822E0B07600C33D45 /* Assets.xcassets */,
 				CFEB473A22E0B07600C33D45 /* LaunchScreen.storyboard */,
 				CFEB473D22E0B07600C33D45 /* Info.plist */,
 			);
 			path = GitHubExplore;
+			sourceTree = "<group>";
+		};
+		CFEB474322E1405800C33D45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB474822E1422000C33D45 /* GitHubEndpoint.swift */,
+				CFEB474722E1422000C33D45 /* GitHubUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CFEB474422E1406A00C33D45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB473522E0B07400C33D45 /* Main.storyboard */,
+				CFEB474922E1423500C33D45 /* UserCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CFEB474522E1408B00C33D45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB474622E1420900C33D45 /* UsersViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEB474B22E1438800C33D45 /* UserCell.swift in Sources */,
 				CFEB473422E0B07400C33D45 /* ViewController.swift in Sources */,
+				CFEB474A22E1438400C33D45 /* UsersViewController.swift in Sources */,
+				CFEB474D22E1438D00C33D45 /* GitHubEndpoint.swift in Sources */,
 				CFEB473222E0B07400C33D45 /* AppDelegate.swift in Sources */,
+				CFEB474C22E1438B00C33D45 /* GitHubUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
