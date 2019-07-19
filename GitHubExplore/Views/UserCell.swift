@@ -33,7 +33,7 @@ class UserCell: UICollectionViewCell {
     }
     
     func configure(with user: GitHubUser, delegate: UserCellDelegate) {
-        imageView.image = user.avatarImage
+        imageView.image = user.avatarImage ?? #imageLiteral(resourceName: "avatarPlaceholder")
         usernameLabel.text = user.username
         repositoriesButton.isHidden = user.repositories == nil
         self.user = user
